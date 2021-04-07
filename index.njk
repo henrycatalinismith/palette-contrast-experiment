@@ -1,0 +1,49 @@
+---
+title: contrast
+---
+<!doctype html>
+<html
+  lang="en"
+  dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+
+    <link
+      rel="canonical"
+      href="https://hen.cat/contrast"
+    />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
+
+    <style>
+    	{{ css | safe }}
+    </style>
+
+    <title>
+      {{ title }}
+    </title>
+  </head>
+  <body>
+    <main>
+      {{ title }}
+
+      <dl>
+        {% for palette in collections.palettes %}
+          <dt>
+            <a href="{{ url }}/{{ palette.data.name }}">
+              {{ palette.data.name }}
+            </a>
+          </dt>
+          <dd>
+            {{ palette.data.description }}
+          </dd>
+        {% endfor %}
+      </dl>
+
+    </main>
+  </body>
+</html>
+

@@ -1,0 +1,95 @@
+<!doctype html>
+<html
+  lang="en"
+  dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
+
+    <style>
+    	{{ css | safe }}
+    </style>
+
+    <title>
+      {{ title }}
+    </title>
+  </head>
+  <body>
+    <main>
+      <h1>
+        {{ name }}
+      </h1>
+
+      <p>
+        {{ description }}
+      </p>
+
+
+      {% set offset = 25 %}
+      <svg class="summary" viewBox="0 0 48 48" width="128" height="128">
+        <circle r="15.915" cx="24" cy="24" fill="white" />
+        {% for label, count in summary.scores %}
+          {% set p = count / summary.total * 100 %}
+          <circle
+            class="summary-{{ label | replace(" ", "") | slug }}"
+            r="15.915"
+            cx="24"
+            cy="24"
+            stroke-dasharray="{{ p }} {{ 100 - p }}"
+            stroke-dashoffset="{{ offset }}"
+          />
+          {% set offset = offset + (100 - p) %}
+        {% endfor %}
+      </svg>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Rating</th>
+            <th>Color combinations</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for label, count in summary.scores %}
+            <tr>
+              <td>{{ label }}</td>
+              <td>{{ count / 2 }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+      <ol class="palette">
+        {% for color in colors %}
+          <li
+            class="palette-color"
+            style="background-color: {{ color.value }}">
+            <span class="palette-label">
+              {{ color.label }}
+            </span>
+          </dt>
+        {% endfor %}
+      </ol>
+
+      <ol class="pairs">
+        {% for pair in pairs %}
+          <li>
+            <span style="background-color: {{ pair.bg.value }}; color: {{ pair.fg.value }}">
+              {{ pair.fg.label }}
+              on
+              {{ pair.bg.label }}
+            </span>
+            {{ pair.label }}
+            {{ pair.ratio }}
+          </li>
+        {% endfor %}
+      </ol>
+
+    </main>
+  </body>
+</html>
+
