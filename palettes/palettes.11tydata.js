@@ -47,6 +47,10 @@ module.exports = {
     pairs: data => pairs(data.colors),
     summary: data => summary(data.colors),
 
+    slug: data => {
+      return data.name.toLowerCase().replace(/ /, "-")
+    },
+
     permalink: data => {
       fs.ensureDirSync(`./_site/${data.page.fileSlug}`)
       return `${data.page.fileSlug}/index.html`

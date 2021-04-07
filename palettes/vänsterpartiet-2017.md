@@ -1,6 +1,6 @@
 ---
 name: Vänsterpartiet 2017
-description: https://www.vansterpartiet.se/assets/VP_Manual_V1b.pdf
+description: https://www.vansterpartiet.se/app/uploads/2017/04/Grafiskmanual_2017.pdf
 colors:
   - label: röd
     value: "#ed1c24"
