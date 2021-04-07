@@ -33,7 +33,7 @@ title: contrast
       <dl>
         {% for palette in collections.palettes %}
           <dt>
-            <a href="{{ url }}/{{ palette.data.name }}">
+            <a href="{{ url }}/{{ palette.data.name | slug }}">
               {{ palette.data.name }}
             </a>
           </dt>
