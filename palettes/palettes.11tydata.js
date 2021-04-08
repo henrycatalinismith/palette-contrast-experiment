@@ -18,6 +18,11 @@ function pairs(colors) {
       })
     })
   })
+
+  pairs.sort((a, b) => {
+    return b.ratio - a.ratio
+  })
+
   return pairs
 }
 

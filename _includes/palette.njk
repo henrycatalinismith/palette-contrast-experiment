@@ -64,32 +64,76 @@
       </table>
 
       <ol class="palette">
+        {% set i = 0 %}
         {% for color in colors %}
-          <li
-            class="palette-color"
-            style="background-color: {{ color.value }}">
+          <li class="palette-item" data-i="{{ i }}">
+            <input
+              class="palette-button"
+              type="radio"
+              id="{{ color.label }}"
+              name="color"
+              value="{{ color.label }}"
+              style="background-color: {{ color.value }}"
+              {% if i == 0 %}checked{% endif %}
+            />
             <span class="palette-label">
               {{ color.label }}
             </span>
           </dt>
+          {% set i = i + 1 %}
         {% endfor %}
       </ol>
 
-      <ol class="pairs">
-        {% for pair in pairs %}
-          <li>
-            <span style="background-color: {{ pair.bg.value }}; color: {{ pair.fg.value }}">
-              {{ pair.fg.label }}
-              on
-              {{ pair.bg.label }}
-            </span>
-            {{ pair.label }}
-            {{ pair.ratio }}
-          </li>
-        {% endfor %}
+      <table class="pairs">
+        <tbody>
+          {% for pair in pairs %}
+            <tr data-bg="{{ pair.bg.label }}">
+              <td
+                class="pair-sample"
+                style="background-color: {{ pair.bg.value }}; color: {{ pair.fg.value }}">
+                <span>
+                {{ pair.fg.label }}
+                on
+                {{ pair.bg.label }}
+                </span>
+              </td>
+              <td>
+                {{ pair.label }}
+              </td>
+              <td>
+                {{ pair.ratio }}
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
       </ol>
 
     </main>
+
+    <script>
+      const styleFilter = document.createElement("style")
+      document.body.appendChild(styleFilter)
+      function filter(label) {
+        styleFilter.innerHTML = `
+          .pairs tr[data-bg="${label}"] {
+            display: block;
+          }
+
+          .pairs tr:not([data-bg="${label}"]) {
+            display: none;
+          }
+        `
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        filter(document.querySelector(".palette-button:checked").value)
+        document
+          .querySelectorAll(".palette-button")
+          .forEach(button => button.addEventListener("change", function() {
+            filter(this.value)
+          }))
+      })
+    </script>
   </body>
 </html>
 
