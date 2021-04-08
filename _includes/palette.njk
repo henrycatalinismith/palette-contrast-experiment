@@ -12,6 +12,18 @@
 
     <style>
     	{{ css | safe }}
+
+      {% set i = 0 %}
+      {% for color in colors %}
+        :root {
+          --display-{{ color.label }}: {% if i == 0 %}grid{% else %}none{% endif %};
+        }
+
+        tr[data-bg="{{ color.label }}"] {
+          display: var(--display-{{color.label}});
+        }
+        {% set i = i + 1 %}
+      {% endfor %}
     </style>
 
     <title>
@@ -20,48 +32,54 @@
   </head>
   <body>
     <main>
-      <h1>
-        {{ name }}
-      </h1>
+      <header class="palette-header">
+        <h1>
+          {{ name }}
+        </h1>
 
-      <p>
-        {{ description }}
-      </p>
+        <p>
+          {{ description }}
+        </p>
+      </header>
 
-
-      {% set offset = 25 %}
-      <svg class="summary" viewBox="0 0 48 48" width="128" height="128">
-        <circle r="15.915" cx="24" cy="24" fill="white" />
-        {% for label, count in summary.scores %}
-          {% set p = count / summary.total * 100 %}
-          <circle
-            class="summary-{{ label | replace(" ", "") | slug }}"
-            r="15.915"
-            cx="24"
-            cy="24"
-            stroke-dasharray="{{ p }} {{ 100 - p }}"
-            stroke-dashoffset="{{ offset }}"
-          />
-          {% set offset = offset + (100 - p) %}
-        {% endfor %}
-      </svg>
-
-      <table>
-        <thead>
-          <tr>
-            <th>Rating</th>
-            <th>Color combinations</th>
-          </tr>
-        </thead>
-        <tbody>
+      <section class="palette-score">
+        {% set offset = 25 %}
+        <svg class="summary" viewBox="4 4 40 40">
+          <circle r="15.915" cx="24" cy="24" fill="white" />
           {% for label, count in summary.scores %}
-            <tr>
-              <td>{{ label }}</td>
-              <td>{{ count / 2 }}</td>
-            </tr>
+            {% set p = count / summary.total * 100 %}
+            <circle
+              class="summary-{{ label | replace(" ", "") | slug }}"
+              r="15.915"
+              cx="24"
+              cy="24"
+              stroke-dasharray="{{ p }} {{ 100 - p }}"
+              stroke-dashoffset="{{ offset }}"
+            />
+            {% set offset = offset + (100 - p) %}
           {% endfor %}
-        </tbody>
-      </table>
+        </svg>
+
+        <table class="palette-scores">
+          <thead>
+            <tr>
+              <th>Rating</th>
+              <th>Pairs</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for label, count in summary.scores %}
+              <tr>
+                <td class="palette-score-label" data-rating="{{ label }}">
+                  {{ label }}
+                </td>
+                <td>{{ count / 2 }}</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+
+      </section>
 
       <ol class="palette">
         {% set i = 0 %}
@@ -87,46 +105,51 @@
       <table class="pairs">
         <tbody>
           {% for pair in pairs %}
-            <tr data-bg="{{ pair.bg.label }}">
+            <tr data-bg="{{ pair.bg.label }}" class="pair">
               <td
                 class="pair-sample"
                 style="background-color: {{ pair.bg.value }}; color: {{ pair.fg.value }}">
-                <span>
+                ABC
+              </td>
+              <td class="pair-label">
                 {{ pair.fg.label }}
-                on
-                {{ pair.bg.label }}
-                </span>
+                ({{ pair.ratio }})
               </td>
-              <td>
+              <td class="pair-rating" data-rating="{{ pair.label }}">
                 {{ pair.label }}
-              </td>
-              <td>
-                {{ pair.ratio }}
               </td>
             </tr>
           {% endfor %}
         </tbody>
-      </ol>
+      </table>
 
     </main>
 
-    <script>
-      const styleFilter = document.createElement("style")
-      document.body.appendChild(styleFilter)
-      function filter(label) {
-        styleFilter.innerHTML = `
-          .pairs tr[data-bg="${label}"] {
-            display: block;
-          }
 
-          .pairs tr:not([data-bg="${label}"]) {
-            display: none;
-          }
-        `
+    <script id="colors" type="application/json">
+      {{ colors | dump | safe }}
+    </script>
+
+    <script>
+      const colors = JSON.parse(
+        document.querySelector("#colors").innerText
+      )
+
+      function filter(label) {
+        colors.forEach(color => {
+          document.documentElement.style.setProperty(
+            `--display-${color.label}`,
+            "none",
+          )
+        })
+
+        document.documentElement.style.setProperty(
+          `--display-${label}`,
+          "grid"
+        )
       }
 
       document.addEventListener("DOMContentLoaded", () => {
-        filter(document.querySelector(".palette-button:checked").value)
         document
           .querySelectorAll(".palette-button")
           .forEach(button => button.addEventListener("change", function() {

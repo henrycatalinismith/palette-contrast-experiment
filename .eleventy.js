@@ -1,4 +1,5 @@
 const fs = require("fs-extra")
+const htmlmin = require("html-minifier")
 const sass = require("sass")
 
 fs.ensureDirSync("_data")
@@ -18,6 +19,20 @@ module.exports = function(eleventyConfig) {
     "css",
     function() {
       return sass.renderSync({ file: "style.scss" }).css
+    }
+  )
+
+  eleventyConfig.addTransform(
+    "htmlmin",
+    function(content, outputPath) {
+      if (outputPath && outputPath.endsWith(".html")) {
+        content = htmlmin.minify(content, {
+          useShortDoctype: true,
+          removeComments: true,
+          collapseWhitespace: true
+        })
+      }
+      return content
     }
   )
 

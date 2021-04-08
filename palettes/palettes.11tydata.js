@@ -2,7 +2,7 @@ const fs = require("fs-extra")
 const { hex, score } = require("wcag-contrast")
 
 function pairs(colors) {
-  const pairs = []
+  let pairs = []
   colors.forEach(bg => {
     colors.forEach(fg => {
       if (bg.value === fg.value) {
@@ -21,6 +21,11 @@ function pairs(colors) {
 
   pairs.sort((a, b) => {
     return b.ratio - a.ratio
+  })
+
+  pairs = pairs.map(p => {
+    p.ratio = p.ratio.toFixed(2)
+    return p
   })
 
   return pairs
