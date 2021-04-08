@@ -48,7 +48,7 @@ module.exports = {
     summary: data => summary(data.colors),
 
     slug: data => {
-      return data.name.toLowerCase().replace(/ /, "-")
+      return data.name.toLowerCase().replace(/ /g, "-")
     },
 
     permalink: data => {
