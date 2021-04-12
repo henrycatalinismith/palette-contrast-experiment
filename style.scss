@@ -1,4 +1,10 @@
+@use "./node_modules/@hendotcat/picknmix/picknmix.scss";
+
 :root {
+  @include picknmix.column;
+  @include picknmix.font-families;
+  @include picknmix.font-sizes;
+
   --padding: 1rem;
   --tiny: calc(100vw - var(--padding) * 2);
   --wide: 32rem;
@@ -10,18 +16,19 @@
   --fail: crimson;
 }
 
-html {
-  box-sizing: border-box;
-}
-
-*, *:before, *:after {
-  box-sizing: inherit;
-}
+@include picknmix.border-box;
 
 body {
-  background-color: white;
-  font-family: sans-serif;
+  background-color: var(--bg0);
   margin: 0;
+}
+
+header {
+  @include picknmix.header;
+}
+
+dl {
+  @include picknmix.description-list;
 }
 
 .summary {
@@ -48,33 +55,20 @@ body {
   stroke: var(--fail);
 }
 
-.palette-header {
+main {
   align-items: center;
-  flex-direction: column;
-  justify-content: center;
   display: flex;
-  height: var(--box);
-  width: var(--box);
-  margin: 0 auto;
-  position: relative;
+  flex-direction: column;
 }
 
-.palette-header h1 {
-  font-family: Rockwell, serif;
-  margin: 0;
-  text-align: center;
-}
-
-.palette-header p {
-  font-family: Rockwell, serif;
-  margin: 0;
-  text-align: center;
+.palette-header {
+  @include picknmix.header;
 }
 
 .palette-score {
   align-items: center;
   display: flex;
-  width: var(--box);
+  width: var(--column);
   margin: 0 auto;
 }
 
@@ -83,7 +77,7 @@ body {
 }
 
 .palette-scores {
-  font-family: Rockwell;
+  font-family: var(--slab);
   width: 50%;
 
   th {
@@ -92,7 +86,7 @@ body {
 }
 
 .palette-score-label {
-  font-family: Menlo;
+  font-family: var(--mono);
   font-size: 1.2rem;
   font-weight: bold;
   --shadow: black;
@@ -130,7 +124,7 @@ body {
 }
 
 .palette {
-  width: var(--box);
+  width: var(--column);
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(
@@ -198,11 +192,11 @@ body {
 .pairs {
   border-collapse: collapse;
   margin: 1rem auto;
-  width: var(--box);
+  width: var(--column);
 }
 
 .pair {
-  font-family: Rockwell, serif;
+  font-family: var(--slab);
   display: grid;
   grid-template-columns: 4rem auto max-content max-content;
   align-items: center;
@@ -227,7 +221,7 @@ body {
 }
 
 .pair-rating {
-  font-family: Menlo;
+  font-family: var(--mono);
   font-size: 1.2rem;
 
     text-shadow:

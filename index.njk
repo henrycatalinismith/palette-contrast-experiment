@@ -1,5 +1,6 @@
 ---
 title: contrast
+description: Contrast ratio accessibility analysis
 ---
 <!doctype html>
 <html
@@ -28,8 +29,14 @@ title: contrast
   </head>
   <body>
     <main>
-      {{ title }}
-
+      <header>
+        <h1>
+          {{ title }}
+        </h1>
+        <p>
+          {{ description }}
+        </p>
+      </header>
       <dl>
         {% for palette in collections.palettes %}
           <dt>
