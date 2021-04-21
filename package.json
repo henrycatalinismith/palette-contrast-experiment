@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@11ty/eleventy": "11ty/eleventy#v1.0.0-canary.10",
-    "@hendotcat/picknmix": "0.0.2",
+    "@hendotcat/picknmix": "0.0.16",
     "chokidar": "^3.5.1",
     "fs-extra": "^9.1.0",
     "html-minifier": "^4.0.0",

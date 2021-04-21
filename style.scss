@@ -1,34 +1,18 @@
 @use "./node_modules/@hendotcat/picknmix/picknmix.scss";
 
+@include picknmix.theme;
+
 :root {
-  @include picknmix.column;
-  @include picknmix.font-families;
-  @include picknmix.font-sizes;
-
-  --padding: 1rem;
-  --tiny: calc(100vw - var(--padding) * 2);
-  --wide: 32rem;
-  --box: min(var(--tiny), var(--wide));
-
   --aaa: limegreen;
   --aa: yellow;
   --aalarge: orange;
-  --fail: crimson;
+  --fail: var(--red);
 }
-
-@include picknmix.border-box;
 
 body {
   background-color: var(--bg0);
+  color: var(--fg);
   margin: 0;
-}
-
-header {
-  @include picknmix.header;
-}
-
-dl {
-  @include picknmix.description-list;
 }
 
 .summary {
@@ -55,16 +39,6 @@ dl {
   stroke: var(--fail);
 }
 
-main {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-}
-
-.palette-header {
-  @include picknmix.header;
-}
-
 .palette-score {
   align-items: center;
   display: flex;
@@ -89,50 +63,36 @@ main {
   font-family: var(--mono);
   font-size: 1.2rem;
   font-weight: bold;
-  --shadow: black;
 
-  text-shadow:
-    1px 0 0 var(--shadow),
-    -1px 0 0 var(--shadow),
-    0 1px 0 var(--shadow),
-    0 -1px 0 var(--shadow),
-    1px -1px 0 var(--shadow),
-    -1px 1px 0 var(--shadow),
-    -1px -1px 0 var(--shadow),
-    1px 1px 0 var(--shadow);
 
   &[data-rating="AAA"] {
     color: var(--aaa);
-    --shadow: black;
   }
 
   &[data-rating="AA"] {
     color: var(--aa);
-    --shadow: black;
   }
 
   &[data-rating="AA Large"] {
     color: var(--aalarge);
-    --shadow: black;
   }
 
   &[data-rating="Fail"] {
     color: var(--fail);
-    --shadow: black;
   }
 
 }
 
 .palette {
-  width: var(--column);
-  margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(
     auto-fit,
     minmax(1rem, 3rem)
   );
   list-style-type: none;
-  padding: 0;
+  padding: 2rem 0;
+  place-content: center;
+  width: 100vw;
 }
 
 .palette-item {
@@ -142,6 +102,7 @@ main {
 
 .palette-button {
   appearance: none;
+  cursor: pointer;
   -webkit-appearance: none;
   bottom: 0;
   left: 0;
@@ -152,6 +113,12 @@ main {
   width: 100%;
   right: 0;
   top: 0;
+}
+
+.palette-button:focus {
+  outline-offset: -0.6rem;
+  outline-style: solid;
+  outline-width: 0.2rem;
 }
 
 .palette-button:checked {
@@ -175,18 +142,6 @@ main {
     top: var(--b);
     left: var(--b);
   }
-}
-
-.palette-label {
-  border: 0;
-  padding: 0;
-  margin: 0;
-  position: absolute;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
 }
 
 .pairs {

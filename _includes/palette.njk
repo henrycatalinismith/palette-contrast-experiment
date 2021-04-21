@@ -93,10 +93,8 @@
               value="{{ color.label }}"
               style="background-color: {{ color.value }}"
               {% if i == 0 %}checked{% endif %}
+              aria-label="{{ color.label }}"
             />
-            <span class="palette-label">
-              {{ color.label }}
-            </span>
           </dt>
           {% set i = i + 1 %}
         {% endfor %}
