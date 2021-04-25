@@ -1,5 +1,7 @@
+const rehype = require("@hendotcat/11tyhype")
 const fs = require("fs-extra")
 const htmlmin = require("html-minifier")
+const rehypeMinifyWhitespace = require("rehype-minify-whitespace")
 const sass = require("sass")
 
 fs.ensureDirSync("_data")
@@ -22,19 +24,11 @@ module.exports = function(eleventyConfig) {
     }
   )
 
-  eleventyConfig.addTransform(
-    "htmlmin",
-    function(content, outputPath) {
-      if (outputPath && outputPath.endsWith(".html")) {
-        content = htmlmin.minify(content, {
-          useShortDoctype: true,
-          removeComments: true,
-          collapseWhitespace: true
-        })
-      }
-      return content
-    }
-  )
+  eleventyConfig.addPlugin(rehype, {
+    plugins: [
+      [rehypeMinifyWhitespace],
+    ]
+  })
 
   eleventyConfig.addWatchTarget("style.scss")
 }
