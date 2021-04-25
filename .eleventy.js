@@ -1,6 +1,5 @@
-const rehype = require("@hendotcat/11tyhype")
+const { rehypePlugin } = require("@hendotcat/11tyhype")
 const fs = require("fs-extra")
-const htmlmin = require("html-minifier")
 const rehypeMinifyWhitespace = require("rehype-minify-whitespace")
 const sass = require("sass")
 
@@ -24,7 +23,7 @@ module.exports = function(eleventyConfig) {
     }
   )
 
-  eleventyConfig.addPlugin(rehype, {
+  eleventyConfig.addPlugin(rehypePlugin, {
     plugins: [
       [rehypeMinifyWhitespace],
     ]

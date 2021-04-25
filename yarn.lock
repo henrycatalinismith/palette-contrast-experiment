@@ -63,10 +63,10 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
-"@hendotcat/11tyhype@^0.0.1":
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/@hendotcat/11tyhype/-/11tyhype-0.0.1.tgz#617e02329cc0fa91db1e1b5eea75e2e924c36836"
-  integrity sha512-YwBBns4W3lO02P8JOrESifd0bOM3ErD3g7bOemLqJijwBs1IMfnkM7Ajjzat3zRlNx+O9N1i9nhp5xBtO+YIAQ==
+"@hendotcat/11tyhype@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@hendotcat/11tyhype/-/11tyhype-0.0.3.tgz#339f600245c274986b04fc2091296592bf00b49b"
+  integrity sha512-1kiVVm+ISTdIYVEZLlN4WCX0YBSv/C+/6POcpbDm6wNzl/hQOZqSA5th1JrUNfVGX1FQwoa039vRv9WzutG5Tw==
   dependencies:
     eazy-logger "3.1.0"
 

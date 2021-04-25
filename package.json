@@ -8,11 +8,14 @@
     "email": "hen@hey.com",
     "url": "https://hen.cat/"
   },
-  "dependencies": {
+  "devDependencies": {
     "@11ty/eleventy": "11ty/eleventy#v1.0.0-canary.10",
+    "@hendotcat/11tyhype": "^0.0.3",
     "@hendotcat/picknmix": "0.0.16",
     "chokidar": "^3.5.1",
     "fs-extra": "^9.1.0",
+    "rehype": "^11.0.0",
+    "rehype-minify-whitespace": "^4.0.5",
     "sass": "^1.32.8",
     "shimmer": "^1.2.1",
     "wcag-contrast": "^3.0.0"
@@ -20,10 +23,5 @@
   "scripts": {
     "build": "eleventy",
     "start": "eleventy --serve"
-  },
-  "devDependencies": {
-    "@hendotcat/11tyhype": "^0.0.1",
-    "rehype": "^11.0.0",
-    "rehype-minify-whitespace": "^4.0.5"
   }
 }
