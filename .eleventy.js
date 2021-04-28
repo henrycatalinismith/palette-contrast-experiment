@@ -33,9 +33,10 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(sassPlugin, {
     files: [{
       file: "style.scss",
-      outFile: "style.css",
+      outFile: "style.[hash].css",
       outputStyle: "compressed",
     }],
+    verbose: true,
   })
 
   eleventyConfig.addWatchTarget("style.scss")
