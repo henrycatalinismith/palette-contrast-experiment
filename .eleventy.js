@@ -1,8 +1,12 @@
 const { rehypePlugin } = require("@hendotcat/11tyhype")
 const { sassPlugin } = require("@hendotcat/11tysass")
+const { reactPlugin } = require("@hendotcat/11tysnap")
+const { register } = require("esbuild-register/dist/node")
 const fs = require("fs-extra")
 const rehypeMinifyWhitespace = require("rehype-minify-whitespace")
 const rehypeUrls = require("rehype-urls")
+
+register()
 
 fs.ensureDirSync("_data")
 fs.ensureDirSync("_includes")
@@ -21,13 +25,16 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addPlugin(rehypePlugin, {
     plugins: [
-      [rehypeMinifyWhitespace],
       [rehypeUrls, url => {
         if (url.href.startsWith("/")) {
           return `${siteUrl}${url.href}`
         }
       }]
     ]
+  })
+
+  eleventyConfig.addPlugin(reactPlugin, {
+    verbose: true,
   })
 
   eleventyConfig.addPlugin(sassPlugin, {
@@ -40,5 +47,13 @@ module.exports = function(eleventyConfig) {
   })
 
   eleventyConfig.addWatchTarget("style.scss")
-}
 
+  const dir = {
+    includes: "_includes",
+    layouts: "_layouts",
+  }
+
+  return {
+    dir,
+  }
+}
