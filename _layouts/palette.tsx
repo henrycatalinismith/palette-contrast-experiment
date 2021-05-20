@@ -1,6 +1,12 @@
 import React from "react"
 
-export default function Palette(props: any): React.ReactElement {
+export default function Palette({
+  name,
+  description,
+  colors,
+  pairs,
+  summary,
+}: Layout<Palette>): React.ReactElement {
   let offset = 25
   return (
     <html lang="en" dir="ltr">
@@ -16,18 +22,18 @@ export default function Palette(props: any): React.ReactElement {
         />
         <style dangerouslySetInnerHTML={{ __html: `
           :root {
-            ${props.colors.map((color, i) => `
+            ${colors.map((color, i) => `
               --display-${color.label}: ${i === 0 ? "grid" : "none"};
             `).join("")}
           }
-          ${props.colors.map((color, i) => `
+          ${colors.map((color, i) => `
             tr[data-bg="${color.label}"] {
               display: var(--display-${color.label});
             }
           `).join("")}
         ` }} />
         <title>
-          {props.title}
+          {name}
         </title>
       </head>
       <body>
@@ -35,19 +41,19 @@ export default function Palette(props: any): React.ReactElement {
 
           <header className="palette-header">
             <h1>
-              {props.name}
+              {name}
             </h1>
 
             <p>
-              {props.description}
+              {description}
             </p>
           </header>
 
           <section className="palette-score">
             <svg className="summary" viewBox="4 4 40 40">
               <circle r="15.915" cx="24" cy="24" fill="white" />
-              {Object.entries(props.summary.scores).map(([label, count]: [string, number]) => {
-                const p = count / props.summary.total * 100
+              {Object.entries(summary.scores).map(([label, count]: [string, number]) => {
+                const p = count / summary.total * 100
                 const circle = (
                   <circle
                     key={label}
@@ -72,7 +78,7 @@ export default function Palette(props: any): React.ReactElement {
                 </tr>
               </thead>
               <tbody>
-                {Object.entries(props.summary.scores).map(([label, count]: [string, number]) => (
+                {Object.entries(summary.scores).map(([label, count]: [string, number]) => (
                   <tr key={label}>
                     <td className="palette-score-label" data-rating={label}>
                       {label}
@@ -86,7 +92,7 @@ export default function Palette(props: any): React.ReactElement {
           </section>
 
           <ol className="palette">
-            {props.colors.map((color, i) => (
+            {colors.map((color, i) => (
               <li className="palette-item" data-i="{{ i }}" key={i}>
                 <input
                   className="palette-button"
@@ -105,7 +111,7 @@ export default function Palette(props: any): React.ReactElement {
 
           <table className="pairs">
             <tbody>
-              {props.pairs.map((pair, i) => (
+              {pairs.map((pair, i) => (
                 <tr data-bg={pair.bg.label} className="pair" key={i}>
                   <td
                     className="pair-sample"
@@ -125,7 +131,7 @@ export default function Palette(props: any): React.ReactElement {
           </table>
 
           <script id="colors" type="application/json" dangerouslySetInnerHTML={{
-            __html: JSON.stringify(props.colors),
+            __html: JSON.stringify(colors),
           }} />
 
           <script dangerouslySetInnerHTML={{ __html: `

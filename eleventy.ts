@@ -1,15 +1,53 @@
-const { rehypePlugin } = require("@hendotcat/11tyhype")
-const { sassPlugin } = require("@hendotcat/11tysass")
-const { reactPlugin } = require("@hendotcat/11tysnap")
-const { register } = require("esbuild-register/dist/node")
-const fs = require("fs-extra")
-const rehypeMinifyWhitespace = require("rehype-minify-whitespace")
-const rehypeUrls = require("rehype-urls")
+import { rehypePlugin } from "@hendotcat/11tyhype"
+import { sassPlugin } from "@hendotcat/11tysass"
+import { reactPlugin } from "@hendotcat/11tysnap"
+import { EleventyCollection, EleventyLayout } from "@hendotcat/11tytype"
+import { register } from "esbuild-register/dist/node"
+import * as fs from "fs-extra"
+import rehypeMinifyWhitespace from "rehype-minify-whitespace"
+import rehypeUrls from "rehype-urls"
 
-register()
+declare global {
+  interface Home {
+    title: string
+    description: string
+  }
+
+  type ContrastScore = "AAA" | "AA" | "AA Large" | "Fail"
+
+  interface Color {
+    label: string
+    value: string
+  }
+
+  interface Palette {
+    name: string
+    description: string
+    colors: Color[]
+    pairs: {
+      bg: Color
+      fg: Color
+      ratio: string
+      label: string
+    }[]
+    summary: {
+      scores: Record<ContrastScore, number>
+      total: number
+    }
+  }
+
+  type Collections = {
+    palettes: EleventyCollection<Palette>
+  }
+
+  type Layout<Template> = EleventyLayout<Template, Collections>
+}
+
+// register()
 
 fs.ensureDirSync("_data")
 fs.ensureDirSync("_includes")
+
 
 module.exports = function(eleventyConfig) {
   console.log("contrast")

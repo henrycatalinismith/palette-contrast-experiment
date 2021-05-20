@@ -1,7 +1,11 @@
 import React from "react"
 import DefinitionList from "../_includes/definition-list"
 
-export default function Home(props: any): React.ReactElement {
+export default function Home({
+  title,
+  description,
+  collections,
+}: Layout<Home>): React.ReactElement {
   return (
     <html lang="en" dir="ltr">
       <head>
@@ -26,16 +30,16 @@ export default function Home(props: any): React.ReactElement {
         <main>
           <header>
             <h1>
-              {props.title}
+              {title}
             </h1>
             <p>
-              {props.description}
+              {description}
             </p>
           </header>
 
           <DefinitionList
-            items={props.collections.palettes.map(palette => ({
-              termHref: `/${palette.data.slug}`,
+            items={collections.palettes.map(palette => ({
+              termHref: `/${palette.fileSlug}`,
               termText: palette.data.name,
               detailsText: palette.data.description
             }))}
