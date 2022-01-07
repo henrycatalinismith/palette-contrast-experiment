@@ -1,20 +1,20 @@
 {
-  "name": "@hendotcat/contrast",
+  "name": "@henrycatalinismith/contrast",
   "description": "WCAG contrast analysis",
   "version": "0.0.0",
   "license": "MIT",
   "author": {
     "name": "Henry Catalini Smith",
-    "email": "smith@hen.cat",
+    "email": "henry@catalinismith.com",
     "url": "https://hen.cat/"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.12.1",
-    "@hendotcat/11tyhype": "^0.0.5",
-    "@hendotcat/11tysass": "^2.0.1",
-    "@hendotcat/11tysnap": "^0.0.10",
-    "@hendotcat/11tytype": "^0.0.5",
-    "@hendotcat/picknmix": "0.0.16",
+    "@henrycatalinismith/11tyhype": "^0.0.5",
+    "@henrycatalinismith/11tysass": "^2.0.1",
+    "@henrycatalinismith/11tysnap": "^0.0.10",
+    "@henrycatalinismith/11tytype": "^0.0.5",
+    "@henrycatalinismith/picknmix": "0.0.16",
     "@types/node": "^15.3.1",
     "chokidar": "^3.5.1",
     "fs-extra": "^9.1.0",

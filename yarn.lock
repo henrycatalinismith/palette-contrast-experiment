@@ -64,57 +64,51 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
-"@hendotcat/11tyhype@^0.0.4":
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/@hendotcat/11tyhype/-/11tyhype-0.0.4.tgz#70f361afb12d1718cff0b08da9ccb4ad8d1bbfa9"
-  integrity sha512-oGxkOfCe4C2KKltdncbThuWmHNXlT1n3iI0EvTH+elsPcI98NuatNginV5bO4k854H3UBR6cYstvL99bovPOgw==
-  dependencies:
-    eazy-logger "3.1.0"
-
-"@hendotcat/11tyhype@^0.0.5":
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/@hendotcat/11tyhype/-/11tyhype-0.0.5.tgz#3833333eec81c49549d01a359e40c1d1c7fca0fc"
-  integrity sha512-KI5SI91Kdp3gIOeugwP0Fn8SF+jyZmKHnp2eb+h/0fXyy700NGQqQI1YPnWWSxX2dORp4Kf3t6sre/BDaXNEvA==
-  dependencies:
-    eazy-logger "3.1.0"
-
-"@hendotcat/11tysass@^2.0.1":
+"@henrycatalinismith/11tyhype@^0.0.5", "@henrycatalinismith/11tyhype@^2.0.1":
   version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@hendotcat/11tysass/-/11tysass-2.0.1.tgz#e1eed7cdb7d414152f2bc775dba1bd814e2aeb0b"
-  integrity sha512-xjVyF8VCiezeJG7TT6Mr0hNmKRmq4z+br0i1PNDnHyPMwKIRSs7GlI4QyaXUsyQQAAJAx5lhkWx6ofPsbjshxg==
+  resolved "https://registry.yarnpkg.com/@henrycatalinismith/11tyhype/-/11tyhype-2.0.1.tgz#7c0861973612b5c9cb23dccfb82b3a3865e9d6e5"
+  integrity sha512-7nSYG5WOkPfPjIQmYsfGQrN+fJ+mPJA5+OuGMBmmqp5BZW19LDpEetsa+r2svBtk0JqRO1MTqlBLn3iIuTIhYg==
   dependencies:
-    "@hendotcat/11tyhype" "^0.0.4"
-    "@hendotcat/11tyshim" "^0.0.4"
+    eazy-logger "3.1.0"
+
+"@henrycatalinismith/11tysass@^2.0.1":
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/@henrycatalinismith/11tysass/-/11tysass-3.0.2.tgz#3aa99bad9c26c1f0c321bbdc94dcc42b287820f8"
+  integrity sha512-663dO0bDcybwqLJwu/YCNKMTxbktU7B6Lt6iP57Tkg8smwAXohgOFrPMi4CDdok2IwLcT+8ZI0noANrGwYMCag==
+  dependencies:
+    "@henrycatalinismith/11tyhype" "^2.0.1"
+    "@henrycatalinismith/11tyshim" "^1.0.1"
     chokidar "^3.5.1"
     eazy-logger "3.1.0"
     fs-extra "^9.1.0"
     hast-util-select "^4.0.2"
+    hast-util-to-html "^7.1.3"
     lodash.debounce "^4.0.8"
     rehype "^11.0.0"
 
-"@hendotcat/11tyshim@^0.0.4":
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/@hendotcat/11tyshim/-/11tyshim-0.0.4.tgz#b03f5e8cebcf0ae3100d2c05f087a35cf52ae634"
-  integrity sha512-0mCE6fc3MHaMB5BunW1UtkEOrCnN9RTk4J7+M8vD7KUXCxiTJwxCbA8Dumx5M+LgODdWLEkjql0V9Ws/lvw66g==
+"@henrycatalinismith/11tyshim@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@henrycatalinismith/11tyshim/-/11tyshim-1.0.1.tgz#62ae715868fdc376248db473a479f2b8f7499228"
+  integrity sha512-f9I59mzz2LtaqWEr+BLNstODwBGCHZVqwk/gBzkAKDriDRV76YIUSvzM1VQ1BR/JL9mXzH92fFPSEJehMPVpjA==
   dependencies:
     eazy-logger "3.1.0"
 
-"@hendotcat/11tysnap@^0.0.10":
-  version "0.0.10"
-  resolved "https://registry.yarnpkg.com/@hendotcat/11tysnap/-/11tysnap-0.0.10.tgz#4900e40f08d4b704e4e097ef11b86067c466b6a0"
-  integrity sha512-PKKoATcDcy0oPvAD+iaeZeeInr0wYy2bVAbjxvWUj2loOEipGvYMEHCr4hXTMNBvPET0VsNu599KNpqe2ummfg==
+"@henrycatalinismith/11tysnap@^0.0.10":
+  version "0.0.13"
+  resolved "https://registry.yarnpkg.com/@henrycatalinismith/11tysnap/-/11tysnap-0.0.13.tgz#83e6ab4d5f8b3efc91df8550d4f0b225bc4f923d"
+  integrity sha512-aQ1A3dNRJwLGogZXsNk4UtjL2a+O19fzN4/JNTzaOMwRrCAG3rVTC1X2dvUFVTBHTJxKC6pb3V0R41LsHgeUQg==
   dependencies:
     eazy-logger "3.1.0"
 
-"@hendotcat/11tytype@^0.0.5":
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/@hendotcat/11tytype/-/11tytype-0.0.5.tgz#6236ee1b20481b5eb94473477f5ce50f6b1d89a1"
-  integrity sha512-6hIARDgrwkKzt4cEwp+QYd2EH3VzT7EoHcivNadS5mxjJCFs2jJFsOeFkrB+4mr9lMt+Av28mGi80CC2Z8enHg==
+"@henrycatalinismith/11tytype@^0.0.5":
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/@henrycatalinismith/11tytype/-/11tytype-0.0.7.tgz#ec8db9197bb52fb28567c8bb2d4e7f600bc6a7d2"
+  integrity sha512-xHa5DogvL7m0NOHLlfS2Jusg0xgQ7W6LG03TJe6E6hPncXpB9dqKi5EQqU+o64w3fkkn/waX24YsutU3FitHiw==
 
-"@hendotcat/picknmix@0.0.16":
-  version "0.0.16"
-  resolved "https://registry.yarnpkg.com/@hendotcat/picknmix/-/picknmix-0.0.16.tgz#af383e0c9fd37d66fee3e9233531b4964b464575"
-  integrity sha512-ZZ49daECmrFeeNn0LaaQ/BCfEMjoGJZ5/JDiz9D1DprGvp5V92o5WqUegEKaKmVY80FGsvtB2oPj7B0rMRI9hw==
+"@henrycatalinismith/picknmix@0.0.16":
+  version "0.0.21"
+  resolved "https://registry.yarnpkg.com/@henrycatalinismith/picknmix/-/picknmix-0.0.21.tgz#4a8954dc02e0952e698a6d460ac2ba43bb8a9ef1"
+  integrity sha512-bSB+HKb+cQtlMFoqNPPpvOBTeybONzZovB7CO1n7Ng2DoiEn0WIn35weecP/d4+1xLpsdMVWLNiN5rrvzuA4PQ==
 
 "@nodelib/fs.scandir@2.1.4":
   version "2.1.4"
@@ -1177,7 +1171,7 @@ hast-util-select@^4.0.2:
     unist-util-visit "^2.0.0"
     zwitch "^1.0.0"
 
-hast-util-to-html@^7.1.1:
+hast-util-to-html@^7.1.1, hast-util-to-html@^7.1.3:
   version "7.1.3"
   resolved "https://registry.yarnpkg.com/hast-util-to-html/-/hast-util-to-html-7.1.3.tgz#9f339ca9bea71246e565fc79ff7dbfe98bb50f5e"
   integrity sha512-yk2+1p3EJTEE9ZEUkgHsUSVhIpCsL/bvT8E5GzmWc+N1Po5gBw+0F8bo7dpxXR0nu0bQVxVZGX2lBGF21CmeDw==
