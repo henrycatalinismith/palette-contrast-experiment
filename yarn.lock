@@ -64,20 +64,20 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
-"@henrycatalinismith/11tyhype@^0.0.5", "@henrycatalinismith/11tyhype@^2.0.1":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@henrycatalinismith/11tyhype/-/11tyhype-2.0.1.tgz#7c0861973612b5c9cb23dccfb82b3a3865e9d6e5"
-  integrity sha512-7nSYG5WOkPfPjIQmYsfGQrN+fJ+mPJA5+OuGMBmmqp5BZW19LDpEetsa+r2svBtk0JqRO1MTqlBLn3iIuTIhYg==
+"@henrycatalinismith/11tyhype@^0.0.5", "@henrycatalinismith/11tyhype@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@henrycatalinismith/11tyhype/-/11tyhype-3.0.0.tgz#8dbf42f1a21d789290c5685dbc299725c000216a"
+  integrity sha512-SBmiscz+Rb5qmjJN/74q53xwtJoIYV9VUdG7/Wji833coyBDwnXuT2ff9LBDlI8PtN0gUW3S9qrYAveIXIpBJw==
   dependencies:
     eazy-logger "3.1.0"
 
 "@henrycatalinismith/11tysass@^2.0.1":
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/@henrycatalinismith/11tysass/-/11tysass-3.0.2.tgz#3aa99bad9c26c1f0c321bbdc94dcc42b287820f8"
-  integrity sha512-663dO0bDcybwqLJwu/YCNKMTxbktU7B6Lt6iP57Tkg8smwAXohgOFrPMi4CDdok2IwLcT+8ZI0noANrGwYMCag==
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/@henrycatalinismith/11tysass/-/11tysass-4.0.1.tgz#bbf3cca5cb6a18dc1dba9392f4b26153599f30f5"
+  integrity sha512-K+qdm2JVLG6dBiwmjuH3IBoyLGrpYVYjvWqGcmhvvSAbY3OqhPddIFpeQn94Q3E3HeLFX49V+iGHbZX5qDW3Xg==
   dependencies:
-    "@henrycatalinismith/11tyhype" "^2.0.1"
-    "@henrycatalinismith/11tyshim" "^1.0.1"
+    "@henrycatalinismith/11tyhype" "^3.0.0"
+    "@henrycatalinismith/11tyshim" "^3.0.0"
     chokidar "^3.5.1"
     eazy-logger "3.1.0"
     fs-extra "^9.1.0"
@@ -86,24 +86,24 @@
     lodash.debounce "^4.0.8"
     rehype "^11.0.0"
 
-"@henrycatalinismith/11tyshim@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@henrycatalinismith/11tyshim/-/11tyshim-1.0.1.tgz#62ae715868fdc376248db473a479f2b8f7499228"
-  integrity sha512-f9I59mzz2LtaqWEr+BLNstODwBGCHZVqwk/gBzkAKDriDRV76YIUSvzM1VQ1BR/JL9mXzH92fFPSEJehMPVpjA==
+"@henrycatalinismith/11tyshim@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@henrycatalinismith/11tyshim/-/11tyshim-3.0.0.tgz#45d75839bef8a0a177d9137f4b58249d1d4f5173"
+  integrity sha512-Ry4q/muTDJ36RtuiWFUVU4Rao8H3RnfJqxE3ZxpzfEevLVDzrw0yk+Wh9he29szd/R73x3T3EwwZ9seO3u5Rxw==
   dependencies:
     eazy-logger "3.1.0"
 
 "@henrycatalinismith/11tysnap@^0.0.10":
-  version "0.0.13"
-  resolved "https://registry.yarnpkg.com/@henrycatalinismith/11tysnap/-/11tysnap-0.0.13.tgz#83e6ab4d5f8b3efc91df8550d4f0b225bc4f923d"
-  integrity sha512-aQ1A3dNRJwLGogZXsNk4UtjL2a+O19fzN4/JNTzaOMwRrCAG3rVTC1X2dvUFVTBHTJxKC6pb3V0R41LsHgeUQg==
+  version "0.0.15"
+  resolved "https://registry.yarnpkg.com/@henrycatalinismith/11tysnap/-/11tysnap-0.0.15.tgz#fd4c930a38ce96226f5d3cd9f71e81d56d9f3d98"
+  integrity sha512-+QpRwCF4AOCdlV/4Hxn43DlrMyvtuuDGchyDIPQAZk0zjnXXB0vT57YjRW78Qg8gQYHOqXuK4F+iWD20VShCKQ==
   dependencies:
-    eazy-logger "3.1.0"
+    eazy-logger "4.0.1"
 
 "@henrycatalinismith/11tytype@^0.0.5":
-  version "0.0.7"
-  resolved "https://registry.yarnpkg.com/@henrycatalinismith/11tytype/-/11tytype-0.0.7.tgz#ec8db9197bb52fb28567c8bb2d4e7f600bc6a7d2"
-  integrity sha512-xHa5DogvL7m0NOHLlfS2Jusg0xgQ7W6LG03TJe6E6hPncXpB9dqKi5EQqU+o64w3fkkn/waX24YsutU3FitHiw==
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/@henrycatalinismith/11tytype/-/11tytype-0.0.8.tgz#70f5b8b8c73f3edccd8ea7d8641bc969d242e669"
+  integrity sha512-y/zDL+zwjF5JQBCnWmOnYRqGwKxHBuLcZThJZU90NQyeM9Yrwv0pTLIq/HK1uCeaGOyO3Zxy6p7MsRfnUBM6vg==
 
 "@henrycatalinismith/picknmix@0.0.16":
   version "0.0.21"
@@ -475,6 +475,14 @@ ccount@^1.0.0:
   resolved "https://registry.yarnpkg.com/ccount/-/ccount-1.1.0.tgz#246687debb6014735131be8abab2d93898f8d043"
   integrity sha512-vlNK021QdI7PNeiUh/lKkC/mNHHfV0m/Ad5JoI0TYtlBnJAslM/JIkm/tGC88bkLIwO6OQ5uV6ztS6kVAtCDlg==
 
+chalk@4.1.2:
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/chalk/-/chalk-4.1.2.tgz#aac4e2b7734a740867aeb16bf02aad556a1e7a01"
+  integrity sha512-oKnbhFyRIXpUuez8iBMmyEa4nbj4IOQyuhc/wy9kY7/WVPcwIO9VA668Pu8RkO7+0G76SLROeyw9CpQ061i4mA==
+  dependencies:
+    ansi-styles "^4.1.0"
+    supports-color "^7.1.0"
+
 chalk@^0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-0.4.0.tgz#5199a3ddcd0c1efe23bc08c1b027b06176e0c64f"
@@ -764,6 +772,13 @@ eazy-logger@3.1.0:
   integrity sha512-/snsn2JqBtUSSstEl4R0RKjkisGHAhvYj89i7r3ytNUKW12y178KDZwXLXIgwDqLW6E/VRMT9qfld7wvFae8bQ==
   dependencies:
     tfunk "^4.0.0"
+
+eazy-logger@4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/eazy-logger/-/eazy-logger-4.0.1.tgz#2e9fe487fb14ed6ac20d5f01d90dff377d403041"
+  integrity sha512-2GSFtnnC6U4IEKhEI7+PvdxrmjJ04mdsj3wHZTFiw0tUtG4HCWzTr13ZYTk8XOGnA1xQMaDljoBOYlk3D/MMSw==
+  dependencies:
+    chalk "4.1.2"
 
 editorconfig@^0.15.3:
   version "0.15.3"
