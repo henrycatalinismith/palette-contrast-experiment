@@ -1,12 +1,12 @@
 {
-  "name": "@henrycatalinismith/contrast",
+  "name": "@henrycatalinismith/palette-contrast-experiment",
   "description": "WCAG contrast analysis",
   "version": "0.0.0",
   "license": "MIT",
   "author": {
     "name": "Henry Catalini Smith",
     "email": "henry@catalinismith.com",
-    "url": "https://hen.cat/"
+    "url": "https://henry.catalinismith.com/"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.12.1",
